@@ -99,36 +99,6 @@
         </div>
       </div>
 
-      <!-- 本周统计 -->
-      <div class="card week-stats">
-        <div class="card-header">
-          <h3>📊 本周统计</h3>
-        </div>
-        <div class="week-chart">
-          <div class="week-bar" v-for="day in weekData" :key="day.label">
-            <div class="week-bar-track">
-              <div class="week-bar-fill" :style="{ height: day.percent + '%', background: day.color }"></div>
-            </div>
-            <span class="week-bar-label">{{ day.label }}</span>
-            <span class="week-bar-val">{{ day.calories }}</span>
-          </div>
-        </div>
-        <div class="week-summary">
-          <div class="week-summary-item">
-            <span class="val">{{ weekAvgCalories }}</span>
-            <span class="label">日均摄入</span>
-          </div>
-          <div class="week-summary-item">
-            <span class="val">{{ weekDays }}</span>
-            <span class="label">记录天数</span>
-          </div>
-          <div class="week-summary-item">
-            <span class="val">{{ weekChange >= 0 ? '+' : '' }}{{ weekChange }}%</span>
-            <span class="label">vs上周</span>
-          </div>
-        </div>
-      </div>
-
       <!-- 累计数据 -->
       <div class="card">
         <div class="card-header">
@@ -156,25 +126,6 @@
               <span class="total-label">总摄入(kcal)</span>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- 快捷操作 -->
-      <div class="card action-card">
-        <div class="action-item" @click="goEdit">
-          <span class="action-icon">👤</span>
-          <span class="action-text">编辑个人信息</span>
-          <span class="action-arrow">›</span>
-        </div>
-        <div class="action-item" @click="router.push('/advice')">
-          <span class="action-icon">💡</span>
-          <span class="action-text">健康建议</span>
-          <span class="action-arrow">›</span>
-        </div>
-        <div class="action-item" @click="router.push('/stats')">
-          <span class="action-icon">📉</span>
-          <span class="action-text">数据统计</span>
-          <span class="action-arrow">›</span>
         </div>
       </div>
 
@@ -391,7 +342,7 @@ onMounted(() => {
   cursor: pointer;
 }
 
-.page-content { padding: 12px 16px; }
+.page-content { padding: 12px 16px; padding-bottom: calc(12px + 60px); }
 
 .setup-tip {
   background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
@@ -566,7 +517,7 @@ onMounted(() => {
 .action-text { flex: 1; font-size: 14px; }
 .action-arrow { font-size: 18px; color: var(--text-hint); }
 
-.about-card { padding: 0; margin-bottom: 12px; }
+.about-card { padding: 0; margin-bottom: 12px;margin-top: 10px; }
 .about-item {
   display: flex;
   justify-content: space-between;

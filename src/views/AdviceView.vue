@@ -70,7 +70,7 @@
         </div>
 
         <!-- 近7日趋势分析 -->
-        <div class="card">
+        <div class="card week-analysis-card">
           <h3 class="card-section-title">📊 近7日摄入分析</h3>
           <div v-if="weekAnalysis.days === 0" class="empty-state">
             <div class="icon">🍽️</div>
@@ -393,6 +393,7 @@ onMounted(async () => {
 .week-conclusion p { font-size: 13px; color: var(--primary-dark); line-height: 1.5; }
 
 .advice-list-card { margin-bottom: 12px; }
+.week-analysis-card { margin-bottom: 12px; }
 .advice-item { display: flex; gap: 10px; margin-bottom: 14px; }
 .advice-item:last-child { margin-bottom: 0; }
 .advice-num { width: 22px; height: 22px; background: var(--primary); color: #fff; border-radius: 50%; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
