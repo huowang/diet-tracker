@@ -4,8 +4,8 @@
 # 依赖
 node_modules/
 
-# 构建输出
-dist/
+# 构建输出（已上传到 GitHub Pages）
+# dist/
 
 # IDE
 .vscode/
