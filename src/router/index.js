@@ -7,6 +7,7 @@ import HomeView from '@/views/HomeView.vue'
 import StatsView from '@/views/StatsView.vue'
 import AdviceView from '@/views/AdviceView.vue'
 import ProfileView from '@/views/ProfileView.vue'
+import ProfileEditView from '@/views/ProfileEditView.vue'
 
 const routes = [
   {
@@ -47,6 +48,12 @@ const routes = [
     path: '/profile',
     name: 'Profile',
     component: ProfileView,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/profile-edit',
+    name: 'ProfileEdit',
+    component: ProfileEditView,
     meta: { requiresAuth: true }
   }
 ]
