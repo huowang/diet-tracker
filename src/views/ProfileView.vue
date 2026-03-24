@@ -32,37 +32,7 @@
         </div>
       </div>
 
-      <!-- 个人信息卡片（只读） -->
-      <div class="card info-card">
-        <div class="info-row">
-          <span class="info-label">性别</span>
-          <span class="info-value">{{ genderText }}</span>
-        </div>
-        <div class="info-row" v-if="authStore.profile?.age">
-          <span class="info-label">年龄</span>
-          <span class="info-value">{{ authStore.profile.age }} 岁</span>
-        </div>
-        <div class="info-row" v-if="authStore.profile?.height">
-          <span class="info-label">身高</span>
-          <span class="info-value">{{ authStore.profile.height }} cm</span>
-        </div>
-        <div class="info-row" v-if="authStore.profile?.weight">
-          <span class="info-label">体重</span>
-          <span class="info-value">{{ authStore.profile.weight }} kg</span>
-        </div>
-        <div class="info-row" v-if="authStore.profile?.target_weight">
-          <span class="info-label">目标体重</span>
-          <span class="info-value">{{ authStore.profile.target_weight }} kg</span>
-        </div>
-        <div class="info-row" v-if="authStore.profile?.activity_level">
-          <span class="info-label">活动量</span>
-          <span class="info-value">{{ activityText }}</span>
-        </div>
-        <div class="info-row" v-if="authStore.profile?.diet_goal">
-          <span class="info-label">饮食目标</span>
-          <span class="info-value">{{ goalText }}</span>
-        </div>
-      </div>
+      <!-- 个人信息已简化，点击编辑查看详情 -->
 
       <!-- 数据统计 -->
       <div class="card">

@@ -88,7 +88,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, onMounted } from 'vue'
+import { ref, reactive, computed, onMounted, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth.js'
 
@@ -121,9 +121,20 @@ const avatarText = computed(() => {
 
 function loadForm() {
   const p = authStore.profile
-  if (!p) return
+  if (!p) {
+    // profile 还没加载，尝试获取
+    authStore.fetchProfile()
+    return
+  }
   Object.keys(form).forEach(k => { if (p[k] !== undefined) form[k] = p[k] })
 }
+
+// 监听 profile 变化，加载数据
+watch(() => authStore.profile, (newProfile) => {
+  if (newProfile) {
+    Object.keys(form).forEach(k => { if (newProfile[k] !== undefined) form[k] = newProfile[k] })
+  }
+}, { immediate: true })
 
 function goBack() {
   router.push('/profile')
