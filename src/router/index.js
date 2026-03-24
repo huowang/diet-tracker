@@ -1,5 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import { supabase } from '@/supabase.js'
+
+import LoginView from '@/views/LoginView.vue'
+import ProfileSetupView from '@/views/ProfileSetupView.vue'
+import HomeView from '@/views/HomeView.vue'
+import StatsView from '@/views/StatsView.vue'
+import AdviceView from '@/views/AdviceView.vue'
+import ProfileView from '@/views/ProfileView.vue'
 
 const routes = [
   {
@@ -9,43 +16,43 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('@/views/LoginView.vue'),
+    component: LoginView,
     meta: { requiresAuth: false }
   },
   {
     path: '/profile-setup',
     name: 'ProfileSetup',
-    component: () => import('@/views/ProfileSetupView.vue'),
+    component: ProfileSetupView,
     meta: { requiresAuth: true }
   },
   {
     path: '/home',
     name: 'Home',
-    component: () => import('@/views/HomeView.vue'),
+    component: HomeView,
     meta: { requiresAuth: true }
   },
   {
     path: '/stats',
     name: 'Stats',
-    component: () => import('@/views/StatsView.vue'),
+    component: StatsView,
     meta: { requiresAuth: true }
   },
   {
     path: '/advice',
     name: 'Advice',
-    component: () => import('@/views/AdviceView.vue'),
+    component: AdviceView,
     meta: { requiresAuth: true }
   },
   {
     path: '/profile',
     name: 'Profile',
-    component: () => import('@/views/ProfileView.vue'),
+    component: ProfileView,
     meta: { requiresAuth: true }
   }
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 })
 
